@@ -9,8 +9,10 @@ function alterarStatus(id) {
         botao.classList.remove('dashboard__item__button--return');
         botao.textContent = 'Alugar';
     } else {
-        imagem.classList.add('dashboard__item__img--rented');
-        botao.classList.add('dashboard__item__button--return');
-        botao.textContent = 'Devolver';
+        if (window.confirm("Você realmente quer devolver?")) {
+            imagem.classList.add('dashboard__item__img--rented');
+            botao.classList.add('dashboard__item__button--return');
+            botao.textContent = 'Devolver';
+        }
     }
 }
