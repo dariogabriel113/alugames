@@ -16,3 +16,16 @@ function alterarStatus(id) {
         }
     }
 }
+
+function buscaQuantidadeJogosAlugados() {
+    let itens = document.querySelectorAll('[class^=dashboard__items__item]');
+    let contadorAlugados = 0;
+    for (var i = 0; i < itens.length; i++) {
+        let isAlugado = itens[i].querySelector('.dashboard__item__img').classList.contains('dashboard__item__img--rented');
+        if (isAlugado) {
+            contadorAlugados++;
+        }
+    }
+
+    console.log(contadorAlugados);
+}
